@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB4C7F751EEC975100DFA87F /* ListeningExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C7F741EEC975100DFA87F /* ListeningExercise.swift */; };
 		EBD656AB1EEC64D0007A8242 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD656AA1EEC64D0007A8242 /* AppDelegate.swift */; };
 		EBD656AD1EEC64D0007A8242 /* ListeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD656AC1EEC64D0007A8242 /* ListeningViewController.swift */; };
 		EBD656B01EEC64D0007A8242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD656AE1EEC64D0007A8242 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB4C7F741EEC975100DFA87F /* ListeningExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeningExercise.swift; sourceTree = "<group>"; };
 		EBD656A71EEC64D0007A8242 /* Accent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD656AA1EEC64D0007A8242 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD656AC1EEC64D0007A8242 /* ListeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				EBD656AA1EEC64D0007A8242 /* AppDelegate.swift */,
 				EBD656AC1EEC64D0007A8242 /* ListeningViewController.swift */,
+				EB4C7F741EEC975100DFA87F /* ListeningExercise.swift */,
 				EBD656AE1EEC64D0007A8242 /* Main.storyboard */,
 				EBD656B11EEC64D0007A8242 /* Assets.xcassets */,
 				EBD656B31EEC64D0007A8242 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4C7F751EEC975100DFA87F /* ListeningExercise.swift in Sources */,
 				EBD656AD1EEC64D0007A8242 /* ListeningViewController.swift in Sources */,
 				EBD656AB1EEC64D0007A8242 /* AppDelegate.swift in Sources */,
 			);
