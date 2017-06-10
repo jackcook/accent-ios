@@ -28,6 +28,6 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "listeningSegue", sender: self)
+        performSegue(withIdentifier: "speakingSegue", sender: self)
     }
 }

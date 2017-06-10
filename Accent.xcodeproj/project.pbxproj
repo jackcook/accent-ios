@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		EB4C7F751EEC975100DFA87F /* ListeningExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C7F741EEC975100DFA87F /* ListeningExercise.swift */; };
 		EB4C7F771EEC9DD700DFA87F /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C7F761EEC9DD700DFA87F /* GamesViewController.swift */; };
+		EB4C7F7B1EECA97900DFA87F /* SpeakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C7F7A1EECA97900DFA87F /* SpeakingViewController.swift */; };
+		EB4C7F7D1EECA9DA00DFA87F /* MicrophoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C7F7C1EECA9DA00DFA87F /* MicrophoneButton.swift */; };
+		EB4C7F7F1EECB0EF00DFA87F /* SpeakingExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C7F7E1EECB0EF00DFA87F /* SpeakingExercise.swift */; };
 		EBD656AB1EEC64D0007A8242 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD656AA1EEC64D0007A8242 /* AppDelegate.swift */; };
 		EBD656AD1EEC64D0007A8242 /* ListeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD656AC1EEC64D0007A8242 /* ListeningViewController.swift */; };
 		EBD656B01EEC64D0007A8242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD656AE1EEC64D0007A8242 /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		EB4C7F741EEC975100DFA87F /* ListeningExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeningExercise.swift; sourceTree = "<group>"; };
 		EB4C7F761EEC9DD700DFA87F /* GamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		EB4C7F7A1EECA97900DFA87F /* SpeakingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakingViewController.swift; sourceTree = "<group>"; };
+		EB4C7F7C1EECA9DA00DFA87F /* MicrophoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneButton.swift; sourceTree = "<group>"; };
+		EB4C7F7E1EECB0EF00DFA87F /* SpeakingExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakingExercise.swift; sourceTree = "<group>"; };
 		EBD656A71EEC64D0007A8242 /* Accent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD656AA1EEC64D0007A8242 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD656AC1EEC64D0007A8242 /* ListeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +67,10 @@
 				EBD656AA1EEC64D0007A8242 /* AppDelegate.swift */,
 				EB4C7F761EEC9DD700DFA87F /* GamesViewController.swift */,
 				EBD656AC1EEC64D0007A8242 /* ListeningViewController.swift */,
+				EB4C7F7A1EECA97900DFA87F /* SpeakingViewController.swift */,
+				EB4C7F7C1EECA9DA00DFA87F /* MicrophoneButton.swift */,
 				EB4C7F741EEC975100DFA87F /* ListeningExercise.swift */,
+				EB4C7F7E1EECB0EF00DFA87F /* SpeakingExercise.swift */,
 				EBD656AE1EEC64D0007A8242 /* Main.storyboard */,
 				EBD656B11EEC64D0007A8242 /* Assets.xcassets */,
 				EBD656B31EEC64D0007A8242 /* LaunchScreen.storyboard */,
@@ -144,8 +153,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4C7F771EEC9DD700DFA87F /* GamesViewController.swift in Sources */,
+				EB4C7F7D1EECA9DA00DFA87F /* MicrophoneButton.swift in Sources */,
+				EB4C7F7B1EECA97900DFA87F /* SpeakingViewController.swift in Sources */,
 				EB4C7F751EEC975100DFA87F /* ListeningExercise.swift in Sources */,
 				EBD656AD1EEC64D0007A8242 /* ListeningViewController.swift in Sources */,
+				EB4C7F7F1EECB0EF00DFA87F /* SpeakingExercise.swift in Sources */,
 				EBD656AB1EEC64D0007A8242 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

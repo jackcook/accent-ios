@@ -74,6 +74,7 @@
                     <connections>
                         <outlet property="tableView" destination="8wZ-UR-nvt" id="vS3-sf-Nrn"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="listeningSegue" id="KPK-KF-O20"/>
+                        <segue destination="uGm-JN-G7S" kind="show" identifier="speakingSegue" id="Ffb-VH-uxi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ko-xj-wiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="36"/>
+            <point key="canvasLocation" x="1910" y="-278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Dt-3W-r8O">
@@ -152,6 +153,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bO7-s2-Xv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-76" y="37"/>
+        </scene>
+        <!--Speaking View Controller-->
+        <scene sceneID="k2P-9i-3HC">
+            <objects>
+                <viewController id="uGm-JN-G7S" customClass="SpeakingViewController" customModule="Eclair" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3JN-1H-H16"/>
+                        <viewControllerLayoutGuide type="bottom" id="EJA-le-neL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cjs-uY-7XD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je suis allé au cinema le soir." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amZ-hl-JQ1">
+                                <rect key="frame" x="32" y="196" width="311" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXz-Gr-Mr5" customClass="MicrophoneButton" customModule="Eclair" customModuleProvider="target">
+                                <rect key="frame" x="123.5" y="421" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qXz-Gr-Mr5" secondAttribute="height" multiplier="1:1" id="uRT-hC-Tpy"/>
+                                    <constraint firstAttribute="width" constant="128" id="vgg-4P-ce5"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="microphoneButtonPressedWithSender:" destination="uGm-JN-G7S" eventType="touchUpInside" id="Xyc-i1-8hY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qXz-Gr-Mr5" firstAttribute="centerX" secondItem="cjs-uY-7XD" secondAttribute="centerX" id="2m1-92-K4W"/>
+                            <constraint firstItem="amZ-hl-JQ1" firstAttribute="leading" secondItem="cjs-uY-7XD" secondAttribute="leading" constant="32" id="LoB-qq-4vy"/>
+                            <constraint firstItem="qXz-Gr-Mr5" firstAttribute="top" secondItem="amZ-hl-JQ1" secondAttribute="bottom" constant="196" id="NQY-PX-7M7"/>
+                            <constraint firstAttribute="trailing" secondItem="amZ-hl-JQ1" secondAttribute="trailing" constant="32" id="Pku-u0-RXb"/>
+                            <constraint firstItem="amZ-hl-JQ1" firstAttribute="top" secondItem="3JN-1H-H16" secondAttribute="bottom" constant="176" id="ugU-df-gxa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="microphoneButton" destination="qXz-Gr-Mr5" id="0pD-bL-Lml"/>
+                        <outlet property="sentenceLabel" destination="amZ-hl-JQ1" id="DxE-OG-QWy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6bY-ug-BlY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1910" y="534"/>
         </scene>
     </scenes>
     <resources>
