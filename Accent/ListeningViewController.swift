@@ -14,6 +14,7 @@ class ListeningViewController: UIViewController, AVAudioPlayerDelegate, UITextFi
     // MARK: Properties
     
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var playButtonCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var answerTextFieldBottomConstraint: NSLayoutConstraint!
     
@@ -30,6 +31,7 @@ class ListeningViewController: UIViewController, AVAudioPlayerDelegate, UITextFi
         
         playButton.layer.cornerRadius = playButton.frame.width / 2
         
+        answerTextField.contentVerticalAlignment = .top
         answerTextField.delegate = self
     }
     
@@ -138,16 +140,59 @@ class ListeningViewController: UIViewController, AVAudioPlayerDelegate, UITextFi
     // MARK: UITextFieldDelegate Methods
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        UIView.animate(withDuration: 0.25) { 
-            self.playButton.backgroundColor = UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
+        if textField.text == exercise.sentences[0] {
+            UIView.animate(withDuration: 0.25) {
+                self.playButton.backgroundColor = UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
+            }
+            
+            UIView.transition(with: playButton, duration: 0.25, options: .transitionCrossDissolve, animations: { 
+                self.playButton.setImage(#imageLiteral(resourceName: "Check"), for: .normal)
+            }, completion: nil)
+            
+            playing = false
+            started = false
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { 
+                self.playButtonCenterConstraint.constant = -self.view.frame.size.width
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view.layoutIfNeeded()
+                }, completion: { done in
+                    self.playButtonCenterConstraint.constant = self.view.frame.size.width
+                    self.view.layoutIfNeeded()
+                })
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
+                self.playButtonCenterConstraint.constant = 0
+                self.playButton.backgroundColor = UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1)
+                self.playButton.setImage(#imageLiteral(resourceName: "Play"), for: .normal)
+                
+                UIView.animate(withDuration: 0.5, animations: { 
+                    self.view.layoutIfNeeded()
+                }, completion: { done in
+                    self.playButtonPressed(sender: self.playButton)
+                })
+            }
+        } else {
+            UIView.animate(withDuration: 0.25) {
+                self.playButton.backgroundColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1)
+            }
+            
+            UIView.transition(with: playButton, duration: 0.25, options: .transitionCrossDissolve, animations: { 
+                self.playButton.setImage(#imageLiteral(resourceName: "Wrong"), for: .normal)
+            }, completion: nil)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                UIView.animate(withDuration: 0.25) {
+                    self.playButton.backgroundColor = UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1)
+                }
+                
+                UIView.transition(with: self.playButton, duration: 0.25, options: .transitionCrossDissolve, animations: {
+                    self.playButton.setImage(self.playing ? #imageLiteral(resourceName: "Pause") : #imageLiteral(resourceName: "Play"), for: .normal)
+                }, completion: nil)
+            }
         }
-        
-        UIView.transition(with: playButton, duration: 0.25, options: .transitionCrossDissolve, animations: { 
-            self.playButton.setImage(#imageLiteral(resourceName: "Check"), for: .normal)
-        }, completion: nil)
-        
-        playing = false
-        started = false
         
         return true
     }
