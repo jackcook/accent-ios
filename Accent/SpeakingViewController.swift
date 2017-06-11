@@ -67,6 +67,10 @@ class SpeakingViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     // MARK: IBActions
     
+    @IBAction func backButtonPressed(sender: UIButton) {
+        let _ = navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func microphoneButtonPressed(sender: UIButton) {
         if audioEngine.isRunning {
             stopRecording()
@@ -114,13 +118,16 @@ class SpeakingViewController: UIViewController, SFSpeechRecognizerDelegate {
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
             var isFinal = false
             
-            if let result = result {
-                print(result.bestTranscription.formattedString)
-                isFinal = result.bestTranscription.formattedString == self.currentExercise?.text || result.isFinal
+            if let result = result, let currentExercise = self.currentExercise {
+                isFinal = result.bestTranscription.formattedString == currentExercise.text || result.isFinal
             }
             
-            if error != nil || isFinal {
+            if error != nil {
                 self.stopRecording()
+            } else if isFinal {
+                self.stopRecording()
+                self.currentExercise = self.pickNextExercise()
+                self.sentenceLabel.text = self.currentExercise?.text
             }
         }
         

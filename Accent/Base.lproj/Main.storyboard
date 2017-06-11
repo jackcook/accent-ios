@@ -112,12 +112,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo3-sm-eCm">
+                                <rect key="frame" x="8" y="28" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="fOj-8E-iR1"/>
+                                    <constraint firstAttribute="width" secondItem="bo3-sm-eCm" secondAttribute="height" multiplier="1:1" id="uNH-Df-mDp"/>
+                                </constraints>
+                                <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Back"/>
+                                <connections>
+                                    <action selector="backButtonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ff6-ga-RQl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="bo3-sm-eCm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="QYi-Es-TGB"/>
                             <constraint firstItem="6F5-8x-zhq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-64" id="RQE-GI-7na"/>
                             <constraint firstItem="6F5-8x-zhq" firstAttribute="top" secondItem="roe-3a-chD" secondAttribute="bottom" constant="32" id="bU7-3g-4H3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6F5-8x-zhq" secondAttribute="bottom" constant="32" id="gfF-2B-hoc"/>
+                            <constraint firstItem="bo3-sm-eCm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="jZR-qK-fRx"/>
                             <constraint firstItem="roe-3a-chD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="kiC-sK-EF9"/>
                             <constraint firstItem="roe-3a-chD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qNv-Yq-gCT"/>
                             <constraint firstItem="6F5-8x-zhq" firstAttribute="centerX" secondItem="roe-3a-chD" secondAttribute="centerX" id="qcW-B0-2fn"/>
@@ -157,7 +171,7 @@
         <!--Speaking View Controller-->
         <scene sceneID="k2P-9i-3HC">
             <objects>
-                <viewController id="uGm-JN-G7S" customClass="SpeakingViewController" customModule="Eclair" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uGm-JN-G7S" customClass="SpeakingViewController" customModule="Accent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3JN-1H-H16"/>
                         <viewControllerLayoutGuide type="bottom" id="EJA-le-neL"/>
@@ -172,7 +186,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXz-Gr-Mr5" customClass="MicrophoneButton" customModule="Eclair" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXz-Gr-Mr5" customClass="MicrophoneButton" customModule="Accent" customModuleProvider="target">
                                 <rect key="frame" x="123.5" y="421" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qXz-Gr-Mr5" secondAttribute="height" multiplier="1:1" id="uRT-hC-Tpy"/>
@@ -182,13 +196,28 @@
                                     <action selector="microphoneButtonPressedWithSender:" destination="uGm-JN-G7S" eventType="touchUpInside" id="Xyc-i1-8hY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f70-M1-cJg">
+                                <rect key="frame" x="8" y="28" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="Lkm-fB-sBU"/>
+                                    <constraint firstAttribute="width" secondItem="f70-M1-cJg" secondAttribute="height" multiplier="1:1" id="gZi-fJ-dt5"/>
+                                </constraints>
+                                <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Back"/>
+                                <connections>
+                                    <action selector="backButtonPressedWithSender:" destination="uGm-JN-G7S" eventType="touchUpInside" id="ahi-dy-xE4"/>
+                                    <action selector="backButtonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xBk-Jl-YpU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qXz-Gr-Mr5" firstAttribute="centerX" secondItem="cjs-uY-7XD" secondAttribute="centerX" id="2m1-92-K4W"/>
+                            <constraint firstItem="f70-M1-cJg" firstAttribute="top" secondItem="3JN-1H-H16" secondAttribute="bottom" constant="8" id="5fP-KJ-SIt"/>
                             <constraint firstItem="amZ-hl-JQ1" firstAttribute="leading" secondItem="cjs-uY-7XD" secondAttribute="leading" constant="32" id="LoB-qq-4vy"/>
                             <constraint firstItem="qXz-Gr-Mr5" firstAttribute="top" secondItem="amZ-hl-JQ1" secondAttribute="bottom" constant="196" id="NQY-PX-7M7"/>
                             <constraint firstAttribute="trailing" secondItem="amZ-hl-JQ1" secondAttribute="trailing" constant="32" id="Pku-u0-RXb"/>
+                            <constraint firstItem="f70-M1-cJg" firstAttribute="leading" secondItem="cjs-uY-7XD" secondAttribute="leading" constant="8" id="Ugt-u4-J2r"/>
                             <constraint firstItem="amZ-hl-JQ1" firstAttribute="top" secondItem="3JN-1H-H16" secondAttribute="bottom" constant="176" id="ugU-df-gxa"/>
                         </constraints>
                     </view>
@@ -203,6 +232,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back" width="24" height="24"/>
         <image name="Play" width="24" height="24"/>
     </resources>
 </document>

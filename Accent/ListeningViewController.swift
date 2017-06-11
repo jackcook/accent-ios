@@ -80,6 +80,10 @@ class ListeningViewController: UIViewController, AVAudioPlayerDelegate, UITextFi
     
     // MARK: IBActions
     
+    @IBAction func backButtonPressed(sender: UIButton) {
+        let _ = navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func playButtonPressed(sender: UIButton) {
         if playing {
             playButton.setImage(#imageLiteral(resourceName: "Play"), for: .normal)
